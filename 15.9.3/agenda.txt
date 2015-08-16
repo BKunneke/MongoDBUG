@@ -1,0 +1,9 @@
+For our first meeting, we have 3 shorter (15-20 minute) topics.  We hope to have something for beginners and something for those more seasoned.  Here is the agenda:
+
+• Getting Started with Mongo - Bill.  I'll have a collection already built and walk through some basics like getting into the shell, running a query, adding a new document, etc.
+
+• TTL Indexing - Joe.  Joe will go over how to set up a time to live index and some of the lessons we've learned from using them
+
+• So you want to be a Mongo Admin - Joe.  Joe will go over tools for monitoring and maintaining your MongoDB in a production environment
+
+Pizza will be supplied by TEKSystems!
