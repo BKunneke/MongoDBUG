@@ -1,0 +1,53 @@
+For starters:
+mongod - MongoDB Daemon
+mongo - MongoDB Shell
+
+From the shell:
+db.help() - DB level help.  Help is organized around the MongoDB hierarchy. MongoDB is organized by databases which contain collections which contain documents
+
+show dbs - Display a list of databases
+db.getCollectionNames() - Shows the collections in the current database
+
+I’ve downloaded a test dataset from Mongo for this talk at https://raw.githubusercontent.com/mongodb/docs-assets/primer-dataset/dataset.json  Then, from a terminal command prompt:
+mongoimport --db test --collection restaurants --drop --file ~/Documents/MongoDBUG/15.9.3/dataset.json
+
+use test - Sets the test database as the current database.  Note, if the database doesn’t exist, it will be created for you but no file footprint until you put something in it.  
+
+show collections - same as the db.getCollecitonNames() above except show collections is a list where the other returns an array. 
+
+db.restaurants.help() - Help for the restaurants collection we just created.  
+db.restaurants.count() - Number of documents in the restaurants collection.
+db.restaurants.findOne() 
+db.restaurants.getIndexes() - Note changed in current version.
+db.restaurants.ensureIndex({"name": 1}) - When a command expects parameters, they are almost always a JSON document.  Here I’ve requested an index on the name key, the 1 denotes ascending and -1 would have denoted descending.  Note, deprecated in the newest version, now its createIndex.
+
+db.restaurants.find() - Finds matching documents.  In this example no parameters were passed in so it just finds things in no particular order.  
+db.restaurants.find({"name": "Glorious Food"})
+db.restaurants.find({"name": "Glorious Food"}).pretty()
+
+Query a subdocument
+db.restaurants.find({"address.zipcode": "10021"})
+db.restaurants.find({"address.zipcode": "10021"}).count()
+db.restaurants.find({"address.zipcode": "10021"}).limit(3).pretty()
+db.restaurants.find({"address.zipcode": "10021"}).sort({"name": 1}).limit(3).pretty()
+
+Find restaurants that have received a score greater than 20:
+db.restaurants.find({"grades.score": {$gt: 20}}).count()
+
+Narrowing what you see with projections:
+db.restaurants.find({"grades.score": {$gt: 20}}, {"name": 1, "cuisine": 1})
+db.restaurants.distinct("cuisine") - Get a list of distant values for cuisine
+db.restaurants.distinct("grades.grade")
+db.restaurants.distinct("cuisine").sort("cuisine")
+
+db.restuarants.insert({"address" : {"building" : "1361", "street" : "S Orange Ave", "zipcode" : "32806"}, "cuisine" : "American ", "name" : "Wendy’s", "restaurant_id" : "89976993"})
+
+db.restaurants.remove({"address.zipcode": "32806"})
+
+
+
+
+
+start 12:00:00
+lastup 12:00:00
+
