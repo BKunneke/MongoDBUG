@@ -40,7 +40,13 @@ db.restaurants.distinct("cuisine") - Get a list of distant values for cuisine
 db.restaurants.distinct("grades.grade")
 db.restaurants.distinct("cuisine").sort("cuisine")
 
+db.restaurants.count()
 db.restuarants.insert({"address" : {"building" : "1361", "street" : "S Orange Ave", "zipcode" : "32806"}, "cuisine" : "American ", "name" : "Wendy’s", "restaurant_id" : "89976993"})
+db.restaurants.count()
+
+Fix our fat finger
+db.restuarants.drop()
+db.restaurants.insert({"address" : {"building" : "1361", "street" : "S Orange Ave", "zipcode" : "32806"}, "cuisine" : "American ", "name" : "Wendy’s", "restaurant_id" : "89976993"})
 
 db.restaurants.remove({"address.zipcode": "32806"})
 
