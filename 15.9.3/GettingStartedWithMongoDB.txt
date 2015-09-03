@@ -50,10 +50,3 @@ db.restaurants.insert({"address" : {"building" : "1361", "street" : "S Orange Av
 
 db.restaurants.remove({"address.zipcode": "32806"})
 
-
-
-
-
-start 12:00:00
-lastup 12:00:00
-
