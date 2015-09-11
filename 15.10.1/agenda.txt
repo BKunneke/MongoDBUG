@@ -1,3 +1,5 @@
 Mongo University - new session starting October 13
 
 Using MongoDB with Node.JS - Robert Khayat
+
+Schema Design - Bill Kunneke and Joe Grein
