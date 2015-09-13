@@ -1,0 +1,8 @@
+MongoDB University:
+
+https://university.mongodb.com/
+
+In my opinion, the first class you should take is MongoDB for DBA's:
+https://university.mongodb.com/courses/M102/about
+
+This class will give you really good insight into MongoDB, command line tools, using the shell, replica sets, and sharding.  Be prepared to devote 5-10 hours per week to do this course and take lots of notes each week.  
